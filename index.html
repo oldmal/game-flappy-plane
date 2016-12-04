@@ -4,23 +4,56 @@
 <head>
   <meta charset="utf-8" />
   <title>Flappy Bird Clone</title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
 
   <style>
     #game_div {
       width: 400px;
       margin: auto;
-      margin-top: 50px;
+      margin-top: 30px;
+    }
+
+    .control-text {
+      margin: auto; 
+      margin-top: 20px;
+      width: 350px;
+      text-align: center;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: bold;
+      opacity: 1;
+      visibility: visible;
+      transition: .5s;
+    }
+    .control-text--passive {
+      opacity: 0;
+      visibility: hidden;
+      
     }
   </style>
 
   <script type="text/javascript" src="phaser.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
   <script type="text/javascript" src="main.js"></script>
 </head>
 
 <body>
 
+<div class="control-text">
+
+  Жми пробел чтобы набрать высоту.<br> Преодолевай препятствия - набирай очки.
+
+</div>
+
   <div id="game_div"> </div>
 
+
+  <script>
+    setTimeout(function(){
+     $('.control-text').addClass('control-text--passive');
+   }, 3000);
+  </script>
 </body>
 
 </html>
